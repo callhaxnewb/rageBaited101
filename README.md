@@ -1,4 +1,4 @@
-god bless gemini pro acess
+god bless gemini pro access
 ## Run Locally
 
 **Prerequisites:**  Node.js
