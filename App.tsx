@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ErrorScreen from './components/demo/ErrorSreen';
 import UserSettings from './components/UserSettings';
 import { LiveAPIProvider } from './contexts/LiveAPIContext';
@@ -16,8 +16,7 @@ import WarmUpScreen from './components/WarmUpScreen';
 import LoginScreen from './components/LoginScreen';
 import ConfigErrorScreen from './components/ConfigErrorScreen';
 
-const API_KEY = process.env.API_KEY;
-
+const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 /**
  * Main application component that provides a real-time debate simulation.
  */
@@ -25,6 +24,20 @@ function App() {
   const { status } = useDebate();
   const { showUserConfig, showAgentEdit } = useUI();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const checkLoggedIn = () => {
+      let token = localStorage.getItem('auth-token');
+      if (token === null) {
+        localStorage.setItem('auth-token', '');
+        token = '';
+      }
+      if (token) {
+        setIsAuthenticated(true);
+      }
+    };
+    checkLoggedIn();
+  }, []);
 
   if (typeof API_KEY !== 'string' || !API_KEY) {
     return <ConfigErrorScreen missingKeys={['API_KEY']} />;
@@ -45,10 +58,11 @@ function App() {
           {status === 'idle' && (
             <div className="welcome-screen">
               <h1>RageBait Trainer</h1>
-              <p>Master the art of online chaos. Learn to dish out and handle epic rage bait.</p>
               <p>
-                Configure your user settings to begin.
+                Master the art of online chaos. Learn to dish out and handle
+                epic rage bait.
               </p>
+              <p>Configure your user settings to begin.</p>
             </div>
           )}
           {status === 'onboarding' && <OnboardingChoice />}
