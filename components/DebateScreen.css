@@ -1,0 +1,47 @@
+/* Debate Screen */
+.debate-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  position: relative;
+}
+.face-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+/* Closing Timer */
+.closing-timer-container {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  padding: 12px 24px;
+  text-align: center;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.closing-timer-container h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: var(--gray-200);
+}
+.timer-display {
+  font-family: 'Space Mono', monospace;
+  font-size: 32px;
+  color: var(--blue-400);
+  transition: color 0.3s;
+}
+.timer-display.overtime {
+  color: var(--red-500);
+}

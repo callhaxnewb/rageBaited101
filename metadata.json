@@ -1,0 +1,7 @@
+{
+  "name": "RageBait Trainer",
+  "description": "Master the art of online chaos. Practice dishing out and handling epic rage bait with your AI sparring partner.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

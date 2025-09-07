@@ -1,0 +1,66 @@
+/* Edit Agent Panel */
+.edit-agent-panel {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gray-700);
+  padding: 24px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.editAgent {
+  display: grid;
+  grid-template-areas:
+    'name'
+    'perso';
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.agent-form-name {
+  grid-area: name;
+}
+.agent-form-personality {
+  grid-area: perso;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.agent-form-personality textarea {
+  flex-grow: 1;
+}
+
+.agent-form-personality label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--gray-200);
+}
+
+.colorPicker {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.colorPicker button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 0;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+.colorPicker li.active button {
+  border-color: white;
+}
+
+.edit-agent-actions {
+  max-width: 800px;
+  margin: 24px auto 0;
+  display: flex;
+  justify-content: flex-end;
+}

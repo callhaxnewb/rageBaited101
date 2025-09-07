@@ -1,0 +1,30 @@
+.onboarding-choice {
+  text-align: center;
+}
+.onboarding-choice h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.onboarding-choice p {
+  line-height: 1.6;
+  color: var(--gray-200);
+  max-width: 500px;
+  margin: 0 auto 24px;
+}
+.onboarding-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+.onboarding-actions .button {
+  font-size: 18px;
+  padding: 12px 24px;
+}
+/* For the "Let's Warm Up" button */
+.onboarding-actions .button:not(.primary) {
+  background: var(--gray-800);
+}
+.onboarding-actions .button:not(.primary):hover {
+  background: var(--gray-700);
+}

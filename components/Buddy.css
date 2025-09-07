@@ -1,0 +1,90 @@
+.ai-core-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 10px var(--color-glow));
+  transition: filter 0.2s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: inset(10% 0 80% 0);
+  }
+  20% {
+    clip-path: inset(50% 0 10% 0);
+  }
+  40% {
+    clip-path: inset(90% 0 5% 0);
+  }
+  60% {
+    clip-path: inset(25% 0 60% 0);
+  }
+  80% {
+    clip-path: inset(70% 0 20% 0);
+  }
+  100% {
+    clip-path: inset(40% 0 45% 0);
+  }
+}
+
+.ai-core {
+  position: absolute;
+  border-radius: 50%;
+  border-style: solid;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.core-ring-1 {
+  width: 100%;
+  height: 100%;
+  border-width: 2px;
+  border-color: var(--color-main) transparent;
+  animation-name: rotate;
+  animation-duration: 4s;
+}
+
+.core-ring-2 {
+  width: 80%;
+  height: 80%;
+  border-width: 3px;
+  border-color: transparent var(--color-main);
+  animation-name: rotate;
+  animation-duration: 6s;
+  animation-direction: reverse;
+}
+
+.core-ring-3 {
+  width: 60%;
+  height: 60%;
+  border-width: 1px;
+  border-color: var(--color-glow) transparent;
+  animation-name: rotate;
+  animation-duration: 2s;
+}
+
+.core-center {
+  width: 40%;
+  height: 40%;
+  background: var(--color-glow);
+  border-radius: 50%;
+  transition: transform 0.1s ease-out;
+}
+
+.is-talking .core-center {
+  animation:
+    glitch 0.5s steps(1, end) infinite,
+    rotate 1s linear infinite;
+}

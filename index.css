@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --text: white;
+  --gray-200: #b4b8bb;
+  --gray-300: #80868b;
+  --gray-500: #5f6368;
+  --gray-700: #3c4043;
+  --gray-800: #292a2d;
+  --gray-900: #202124;
+  --gray-1000: #0a0a0a;
+  --blue-400: #80c1ff;
+  --blue-500: #4285f4;
+  --purple-500: #9f5dff;
+  --red-500: #ea4335;
+  --background: #000;
+  --color: var(--text);
+  --font-family: 'Space Mono', monospace;
+  --font-family-heading: 'Chakra Petch', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--background);
+  color: var(--text);
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+/* Apply stylistic glow only to primary headings */
+h1,
+h2 {
+  color: var(--purple-500);
+  text-shadow: 0 0 8px rgba(159, 93, 255, 0.7);
+}
+
+li {
+  list-style: none;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--font-family);
+  background: var(--gray-900);
+  color: white;
+  border: 1px solid var(--gray-700);
+  outline: none;
+  font-size: 16px;
+  resize: none;
+  user-select: text;
+  border-radius: 0;
+  padding: 12px;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3e%3cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1em;
+  padding-right: 2.5rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--gray-300);
+  user-select: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--purple-500);
+  background: #111;
+  box-shadow: 0 0 10px var(--purple-500);
+}
+
+button {
+  font-family: var(--font-family-heading);
+  background: var(--gray-800);
+  color: white;
+  border: 1px solid var(--gray-700);
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 0;
+  transition: all 0.2s ease-out;
+  text-transform: uppercase;
+  transform: skewX(-15deg);
+}
+
+button > * {
+  transform: skewX(15deg);
+}
+
+button:hover:not(:disabled) {
+  background: var(--purple-500);
+  color: white;
+  border-color: var(--purple-500);
+  box-shadow: 0 0 15px var(--purple-500);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.button.primary {
+  background: var(--purple-500);
+  border-color: var(--purple-500);
+  color: white;
+}
+
+.button.primary:hover:not(:disabled) {
+  background: white;
+  color: var(--purple-500);
+  box-shadow: 0 0 20px white;
+}
+
+.icon {
+  font-family: 'Material Symbols Outlined';
+  font-weight: 300;
+  line-height: 1;
+  font-size: 1.25em;
+}

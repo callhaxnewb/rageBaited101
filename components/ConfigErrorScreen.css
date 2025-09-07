@@ -1,0 +1,72 @@
+.config-error-screen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  color: var(--text);
+  padding: 20px;
+}
+
+.config-error-box {
+  background-color: var(--gray-1000);
+  border: 1px solid var(--red-500);
+  padding: 40px;
+  max-width: 550px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(234, 67, 53, 0.3);
+}
+
+.config-error-box .icon-container {
+  margin-bottom: 24px;
+}
+
+.config-error-box .icon {
+  font-size: 48px;
+  color: var(--red-500);
+}
+
+.config-error-box h2 {
+  font-size: 28px;
+  color: var(--red-500);
+  text-shadow: none;
+  margin-bottom: 16px;
+}
+
+.config-error-box p {
+  font-size: 16px;
+  color: var(--gray-200);
+  line-height: 1.6;
+}
+
+.config-error-box ul {
+  list-style: none;
+  margin: 24px 0;
+  padding: 16px;
+  background-color: var(--gray-900);
+  border: 1px solid var(--gray-700);
+}
+
+.config-error-box li {
+  margin-bottom: 8px;
+}
+
+.config-error-box li:last-child {
+  margin-bottom: 0;
+}
+
+.config-error-box code {
+  font-family: 'Space Mono', monospace;
+  background-color: var(--gray-800);
+  color: var(--blue-400);
+  padding: 4px 8px;
+  font-size: 16px;
+}
+
+.config-error-box .instructions {
+  font-size: 14px;
+  color: var(--gray-300);
+  margin-top: 24px;
+}
